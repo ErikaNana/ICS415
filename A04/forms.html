@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>And here's a form!</title>
+	<meta charset="ISO-8859-1">
+	<title>And here's a form!</title>
+	<link rel = "stylesheet" href = "style.css">
 </head>
 <body >
-	<h1>What's Up Doc?</h1>
-		<table border="1" cellpadding = "10" cellspacing="0" style = "width: 100%">
-			<tr>
-				<td colspan="2">
-					<a href = "home.html">Home</a>&nbsp;&nbsp;&nbsp;
-					<a href = "forms.html">Forms</a>&nbsp;&nbsp;&nbsp;
-					<a href = "frameLayout/frames.html">Frames</a>
-					</td>
-			</tr>
-			<tr style = "height:50%">
-				<td valign="top" style = "width:40%"><h3>Forms Summary</h3>
-					<p>HTML forms support several different types of input.</p>
-				</td>
-				<td valign="top" style = "width:60%"><h2>Forms Page</h2>
-						<form action = "forms.html">
-							The following is a text input: <br>
-							Username : <input type = "text" name = "username"><br>
-							Then a password input: <br>
-							Password: <input type = "password" name = "pwd"><br>
-							We can have radio buttons: <br>
-							<input type = "radio" name = "sex" value = "male"> Male <br>
-							<input type = "radio" name = "sex" value = "female"> Female <br>
-							Or checkboxes: <br>
-							<input type = "checkbox" name = "vehicle" value = "Car"> Car <br>
-							<input type = "checkbox" name = "vehicle" value = "Bike"> Bike <br> 
-							And finally a submit button: <br>
-							<input type = "submit" value = "Submit">
-							 <br><br><br><br><br><br><br><br><br><br><br>
-						</form>
-				</td>
-			</tr>
-			<tr>
-				<td align="center" colspan = "2"> Copyright (C) Erika Nana </td>
-			</tr>
-		</table>
+	<div id="header">
+		<h1>What's up Doc?</h1>
+	</div>
+	<div id = "navbar">
+		<a href = "home.html">Home</a> | 
+		<a href = "forms.html">Forms</a>
+	</div>
+	<table class = "outer">
+		<tr>
+			<td id = "sidebar"><h3>Forms Summary</h3>
+				<p>HTML forms support several different types of input.</p>
+			</td>
+			<td id = "content"><h2>Forms Page</h2>
+					<form action = "forms.html">
+						Pick a color: <input type = "color" name = "pickedColor"><br>
+						When's your birthday? <input type = "date" name = "bday"><br>
+						Can you be more specific? (Date and time) <input type = "datetime" name = "bdaytime"><br>
+						Email: <input type = "email" name = "email"><br>
+						Pick a month: <input type = "month" name = "pickedMonth"><br>
+						What's your favorite number (1-100)? <input type = "number" name = "quantity" min = "1" max = "100"><br>
+						Pick again: <input type = "range" name = "points" min = "1" max = "10"><br>
+						Let Google find something for you: <input type = "search" name = "googleSearch"><br>
+						Give me a website: <input type = "url" name = "website"><br>
+						<input type = "submit" value = "Submit">
+						<br><br><br><br><br><br><br><br><br><br><br>
+					</form>
+			</td>
+		</tr>
+		<tr>
+			<td id = "footer" colspan = "2"> Copyright (C) Erika Nana </td>
+		</tr>
+	</table>
 </body>
 </html>
