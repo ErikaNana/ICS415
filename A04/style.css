@@ -4,7 +4,7 @@ html, body{
 	/* Deal with overflow */
 	height: 100%;
 	width: 99.5%;
-	background-image: url("redPanda.jpg");
+	background-image: url("/redPanda.jpg");
 	background-size: 100%;
 }
 h2{
@@ -63,14 +63,17 @@ a:visited {
 	text-align: right;
 	height:50px;
 	font-size: 18px;
+	padding-right: 10px;
 }
 #sidebar{
 	width:25%;
 	vertical-align: top;
+	padding-left: 10px;
 }
 #content{
 	width: 75%;
 	vertical align: top;
+	padding-left: 10px;
 }
 #footer{
 	text-align: center;
