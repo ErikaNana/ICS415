@@ -69,7 +69,6 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
-  background: url("/A09/bodybg.jpg");
 }
 
 a:focus {
@@ -311,7 +310,6 @@ a:focus {
 
 .span8 {
   width: 620px;
-  padding: 0px 20px 20px;
 }
 
 .span7 {
@@ -393,7 +391,6 @@ a:focus {
 .row-fluid {
   width: 100%;
   *zoom: 1;
-  background: #ffffff;
 }
 
 .row-fluid:before,
@@ -6171,9 +6168,6 @@ a.badge:focus {
   position: fixed;
 }
 
-/* Additions */
-#top-header, footer{
-	color: #ffffff;
-}
+
 
 
