@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- See CSS, look at Base CSS -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Version Numero Dos</title>
+		<link rel="stylesheet" type = "text/css" href = "css/bootstrap.css">
+	</head>
+	<body>
+		<!-- Wraps everything in website-->
+		<!-- # is a commonly used way to make sure the link doesn't lead anywhere on its own-->
+		<!-- Example: <a href = "#news"> will take you to wherever you have <a name = "news"> -->
+		<!-- The Main wrapper div starts -->
+		<div class="container-fluid">
+			<!-- header content -->
+			<h1><a href="#">Demo</a></h1>
+			<h4 id = "top-header"><em>Site Description</em></h4>
+			<!-- Navigation -->
+			<div class="navbar">
+	          <div class="navbar-inner">
+	            <div class="container">
+	              <ul class="nav">
+	                <li class="active"><a href="#">Home</a></li>
+	                <li><a href="#">Themify</a></li>
+	                <li><a href="#">IconDock</a></li>
+	                <li><a href="#">N.Design</a></li>
+	              </ul>
+	              <form class = "navbar-search pull-right">
+	              	<input type = "text" class = "search-query" placeholder = "Search">
+	              </form>
+	            </div>
+	          </div>
+	        </div>
+	        		<!-- Divide the parent wrapper class container into two unequal parts using the 12 grids -->
+	    <!--  Need this wrapper class because span* classes are default floated left, so need this to force it to be under all content -->
+			<div class = "row-fluid">
+				<!-- Main content section spans 8 grids -->
+				<div class = "span8">
+					<h3>Just a Post Title</h3>
+					<time class="post-date" datetime="2011-05-08">May 8, 2011</time>
+					<em>in</em>
+					<a href="#">Category</a>
+					<br>
+					<img src="sample-image.jpg">
+					<br>
+					<p>
+						Fusce ut sem est. In eu sagittis felis. In gravida arcu ut neque ornare vitae rutrum turpis vehicula. 
+						Nunc ultrices sem mollis metus rutrum non malesuada metus fermentum. Vestibulum ante ipsum primis in 
+						faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque interdum rutrum quam, a pharetra 
+						est pulvinar ac. Vestibulum congue nisl magna. Ut vulputate odio id dui convallis in adipiscing libero
+						condimentum. Nunc et pharetra enim. Praesent pharetra, neque et luctus tempor, leo sapien faucibus leo, 
+						a dignissim turpis ipsum sed libero. Sed sed luctus purus. Aliquam faucibus turpis at libero consectetur
+						euismod. Nam nunc lectus, congue non egestas quis, condimentum ut arcu. Nulla placerat, tortor non 
+						egestas rutrum, mi turpis adipiscing dui, et mollis turpis tortor vel orci. Cras a fringilla nunc. 
+						Suspendisse volutpat, eros congue scelerisque iaculis, magna odio sodales dui, vitae vulputate elit 
+						metus ac arcu. Mauris consequat rhoncus dolor id sagittis. Cras tortor elit, aliquet quis tincidunt eget, 
+						dignissim non tortor.
+					</p>
+				</div>
+				<!-- Right Sidebar -->
+				<div class = "span4">
+					<!-- Need to add nav-list in addition to nav class so that it looks like a list -->
+					<h4>Sidebar</h4>
+					<ul class = "nav nav-list">
+						<!--  Makes it look like a heading to the section of links -->
+<!-- 						<li class = "nav-header">Leftbar</li> -->
+						<li class = "active"><a href = "#">WordPress</a></li>
+						<li><a href = "#">Design</a></li>
+						<li><a href = "#">Design</a></li>
+					</ul>
+				</div>
+				<div class = "span4">
+					<h4>Flickr</h4>
+					<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8.&display=latest&size=s&layout=x&source=user&user=52839779@N02"></script> 
+				</div>
+			</div>
+		</div>
+		<!--Placed here for performance -->
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.js"></script>
+	</body>
+</html>
