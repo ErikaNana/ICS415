@@ -31,12 +31,11 @@
 	            </div>
 	          </div>
 	        </div>
-	        		<!-- Divide the parent wrapper class container into two unequal parts using the 12 grids -->
-	    <!--  Need this wrapper class because span* classes are default floated left, so need this to force it to be under all content -->
+	        <!-- Divide wrapper class -->
 			<div class = "row-fluid">
 				<!-- Main content section spans 8 grids -->
 				<div class = "span8">
-					<h3>Just a Post Title</h3>
+					<h1>Just a Post Title</h1>
 					<time class="post-date" datetime="2011-05-08">May 8, 2011</time>
 					<em>in</em>
 					<a href="#">Category</a>
@@ -56,24 +55,40 @@
 						metus ac arcu. Mauris consequat rhoncus dolor id sagittis. Cras tortor elit, aliquet quis tincidunt eget, 
 						dignissim non tortor.
 					</p>
+					<h3>Vimeo Video</h3>
+					<div class="row-fluid">
+					   <iframe class="span"
+					           style="height: 400px;"
+					           src="http://player.vimeo.com/video/6284199">
+				   		</iframe>
+				   		<h3>YouTube</h3>
+						<object>
+							<param name="movie" value="http://www.youtube.com/v/NmRTreaCJXs?version=3">
+							<param name="allowFullScreen" value="true">
+							<param name="allowscriptaccess" value="always">
+							<param name="wmode" value="transparent">
+							<embed class = "span" wmode="transparent" src="http://www.youtube.com/v/NmRTreaCJXs?version=3" type="application/x-shockwave-flash" height="420" allowscriptaccess="always" allowfullscreen="true">
+						</object>
+					</div>
 				</div>
 				<!-- Right Sidebar -->
 				<div class = "span4">
-					<!-- Need to add nav-list in addition to nav class so that it looks like a list -->
 					<h4>Sidebar</h4>
 					<ul class = "nav nav-list">
-						<!--  Makes it look like a heading to the section of links -->
-<!-- 						<li class = "nav-header">Leftbar</li> -->
-						<li class = "active"><a href = "#">WordPress</a></li>
+						<li><a href = "#">WordPress</a></li>
 						<li><a href = "#">Design</a></li>
 						<li><a href = "#">Design</a></li>
 					</ul>
-				</div>
-				<div class = "span4">
 					<h4>Flickr</h4>
-					<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8.&display=latest&size=s&layout=x&source=user&user=52839779@N02"></script> 
+					<!-- Modified the flickr script to remove the divs -->
+					<script type = "text/javascript" src ="js/flickrscript.js">
+					</script>
 				</div>
 			</div>
+			<br><br>
+			<footer>
+				<p>Tutorial by <a href="http://webdesignerwall.com">Web Designer Wall</a></p>
+			</footer>
 		</div>
 		<!--Placed here for performance -->
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
