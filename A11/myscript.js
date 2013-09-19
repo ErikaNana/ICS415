@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	//hide teh answers first
+	//hide the answers first
 	$("b+div").hide();
 	$("div").click(function(){
 	    //check if the answer is hidden
