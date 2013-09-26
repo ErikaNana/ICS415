@@ -9,8 +9,8 @@ $(document.getElementById('body')).ready(function() {
 		$('#stage').load(url, function (){
 	
 	    var all = $(this).find("*");
-	    //find each tag
-	    for (i = 0; i < all.length; i++) { // <- here
+	    //find each tag and number of times it occurs
+	    for (i = 0; i < all.length; i++) {
 	    	var tag = all.get(i).tagName.toLowerCase();
 	    	var tagChildren = $(this).find(tag).length;
 	        var full = "| " + tag + " | " + tagChildren;
@@ -27,6 +27,7 @@ $(document.getElementById('body')).ready(function() {
     	$("#display").empty();
     	$("#display").append("Scripts:  ");
     	url = $("input[name=urlField]").val();
+    	
         $('#stage').load(url, function (){
         	var scripts = $(this).find("script[type='text/javascript']");
         	for (i = 0; i < scripts.length; i++){
