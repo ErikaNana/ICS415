@@ -25,6 +25,7 @@ $(document.getElementById('body')).ready(function() {
     $("#two").click(function(){
     	//clear display
     	$("#display").empty();
+    	$("#display").append("Scripts:  ");
     	url = $("input[name=urlField]").val();
         $('#stage').load(url, function (){
         	var scripts = $(this).find("script[type='text/javascript']");
