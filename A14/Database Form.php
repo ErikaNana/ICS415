@@ -1,7 +1,6 @@
 <html>
 <body>
  	<?php
- 		$table = NULL;
  		$mysqli = new mysqli("localhost", "erika", "tangent11", "db");
 
  		if ($mysqli -> connect_errno){
