@@ -4,4 +4,5 @@ Project::Application.routes.draw do
     get 'auth/logout' => 'sessions#destroy',  :as => 'logout'
     get 'auth/failure' => 'sessions#failure'
     get 'home' => 'static#home'
+    get 'about' => 'static#about'
 end
