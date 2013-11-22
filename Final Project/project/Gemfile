@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-#Use Haml
 gem 'haml'
+
+gem 'bootstrap-sass'
 
 # use Ruby debugger
 group :development, :test do
