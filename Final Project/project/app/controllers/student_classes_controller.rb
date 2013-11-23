@@ -7,6 +7,7 @@ class StudentClassesController < ApplicationController
 
   def show
     @student_class = StudentClass.find_by_id(params[:id])
+    @id = params[:id]
   end
 
   def new
@@ -35,7 +36,9 @@ class StudentClassesController < ApplicationController
   end
 
   def destroy
+    @student_class = StudentClass.find_by_id(params[:id])
     @student_class.destroy
+    redirect_to home_path
   end
 
 =begin

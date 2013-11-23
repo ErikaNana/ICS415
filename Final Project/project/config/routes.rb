@@ -1,5 +1,7 @@
 Project::Application.routes.draw do
-  resources :student_classes
+    resources :student_classes do
+        resources :assignments
+    end
     root :to => "static#welcome" #controller#action
     get 'auth/facebook/callback' => 'sessions#create'
     get 'auth/logout' => 'sessions#destroy',  :as => 'logout'
