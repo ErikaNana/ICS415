@@ -1,0 +1,24 @@
+%h1 Dashboard
+
+%div{:class => "container-fluid"}
+    %div{:class => "row"}
+        %div{:class => "col-md-2"}
+            %h3#navigation Navigation
+            %ol{:class => "nav nav-pills nav-stacked"}
+                %li{:class => "text-left"}= link_to "Add Class", new_student_class_path
+                %li{:class => "text-left"}= link_to "Delete Class", '/deleteClass'
+        %div{:class => "col-md-10"}
+            %h3#classes Upcoming Deadlines
+    %div{:class => "row"}
+        %div{:class => "col-md-10 pull-right"}
+            %h3 Classes
+            %table{:class => "table table-striped"}
+                %tbody
+                    -if @classes.blank?
+                        %tr
+                            %td No classes added yet
+                    -else
+                        - @classes.each do |userClass|
+                            %tr
+                                %td= link_to "#{userClass.name}", student_class_path(userClass)
+
