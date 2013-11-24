@@ -4,4 +4,6 @@ class Assignment < ActiveRecord::Base
     attr_accessible :priority
     attr_accessible :description
     attr_accessible :className
+
+    belongs_to :course
 end

@@ -6,16 +6,17 @@ class AssignmentsController < ApplicationController
       flash[:warning] = "Please fill in all fields"
       redirect_to :back
     else
-      Assignment.create!(params[:assignment])
-      raise @assignment.inspect
-      #redirect_to course_path(params[:course_id])
+      @assignment = Assignment.create!(params[:assignment])
+      redirect_to course_path(params[:course_id])
     end
   end
 
   def new
   end
 
-  def destroys
+  def destroy
   end
-
+  def show
+    @assignment = Assignment.find_by_id(params[:id])
+  end
 end

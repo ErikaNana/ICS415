@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find_by_id(params[:id])
     @id = params[:id]
+    @assignments = Assignment.find(:all, :conditions =>{:className => @course.name})
   end
 
   def new
@@ -22,15 +23,6 @@ class CoursesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Student class was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   def destroy
