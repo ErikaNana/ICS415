@@ -40,15 +40,16 @@ li#userName {
 }
 .navbar-header a{
     text-decoration: none;
-    color: #fff;
+    color: #0EBFE9;
 }
-.navbar-header {
+.brand {
+  color: #0EBFE9;
   float: left;
   margin-left: 10px;
   font-size: 1.7em;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 13px;
+  padding-top: 10px;
   font-weight: bold;
   line-height: 1;
 }
@@ -76,4 +77,17 @@ td > a:hover{
 
 td > a{
   font-size: 16px;
+}
+div #inputDescription > textarea{
+  height: 100px;
+}
+.message{
+  height: 25px;
+  padding-top: 5px;
+}
+#warning{
+  color: red;
+}
+#notice{
+  color: green;
 }

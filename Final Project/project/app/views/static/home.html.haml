@@ -7,7 +7,8 @@
             %ol{:class => "nav nav-pills nav-stacked"}
                 %li{:class => "text-left"}= link_to "Add Class", new_student_class_path
         %div{:class => "col-md-10"}
-            %h3#classes Upcoming Deadlines
+            /default is by date, can sort by priority or class name
+            %h3#classes Week of #{@week}
     %div{:class => "row"}
         %div{:class => "col-md-10 pull-right"}
             %h3 Classes

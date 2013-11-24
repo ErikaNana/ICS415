@@ -1,5 +1,4 @@
 class StudentClassesController < ApplicationController
-
   def index
     @student_classes = StudentClass.all
     redirect_to home_path
