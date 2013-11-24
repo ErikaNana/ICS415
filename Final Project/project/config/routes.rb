@@ -1,5 +1,5 @@
 Project::Application.routes.draw do
-    resources :student_classes do
+    resources :courses do
         resources :assignments
     end
     root :to => "static#welcome" #controller#action

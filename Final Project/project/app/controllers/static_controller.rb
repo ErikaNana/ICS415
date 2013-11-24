@@ -1,9 +1,8 @@
 class StaticController < ApplicationController
-    skip_before_action :set_current_user, except:[:home] #for first time login
+    skip_before_action :set_current_user, except:[:home] #should be logged in at this point
+
     def home
-        #@current_user = User.find_by_id(session[:user_id]);
-        #raise params[:class].inspect
-        @classes = StudentClass.all
+        @classes = Course.all
         @week = Date.today.at_beginning_of_week.strftime("%B %d, %Y")
         @endWeek = Date.today.at_beginning_of_week.advance(:days => 6)
     end

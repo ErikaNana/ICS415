@@ -3,11 +3,11 @@
         %div{:class => "col-md-2"}
             %h3 Navigation
             %ol{:class => "nav nav-pills nav-stacked"}
-                %li{:class => "text-left"}= link_to "Add Assignment", new_student_class_assignment_path(@id)
-                %li{:class => "text-left"}=link_to "Edit Class", edit_student_class_path(@id)
-                %li{:class => "text-left"}= link_to "Delete Class", student_class_path(@student_class), :method => :delete, :confirm => 'Are you sure?'
+                %li{:class => "text-left"}= link_to "Add Assignment", new_course_assignment_path(@id)
+                %li{:class => "text-left"}=link_to "Edit Class", edit_course_path(@id)
+                %li{:class => "text-left"}= link_to "Delete Class", course_path(@course), :method => :delete, :confirm => 'Are you sure?'
         %div{:class => "col-md-10"}
-            %h3 Upcoming Deadlines for #{@student_class.name}
+            %h3 Upcoming Deadlines for #{@course.name}
             %div#deadlines
     %div{:class => "row"}
         %div{:class => "col-md-10 pull-right"}
@@ -20,6 +20,6 @@
                     -else
                         - @assignments.each do |assignment|
                             %tr
-                                %td= link_to "#{assginment.name}", student_class_path(userClass)
+                                %td= link_to "#{assginment.name}", course_path(userClass)
                                 %td
                                     %button{:type => "submit", :class => "btn btn-default"} Delete
