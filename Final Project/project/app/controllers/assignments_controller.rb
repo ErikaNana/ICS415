@@ -7,6 +7,7 @@ class AssignmentsController < ApplicationController
       redirect_to :back
     else
       @assignment = Assignment.create!(params[:assignment])
+      raise @assignment.inspect
       redirect_to course_path(params[:course_id])
     end
   end
@@ -14,6 +15,7 @@ class AssignmentsController < ApplicationController
   def new
   end
   def edit
+    @assignment = Assignment.find(params[:id])
   end
   def destroy
     #raise
@@ -23,5 +25,8 @@ class AssignmentsController < ApplicationController
   end
   def show
     @assignment = Assignment.find_by_id(params[:id])
+  end
+  def update
+    @assignment = Assignment.find(params[:id])
   end
 end

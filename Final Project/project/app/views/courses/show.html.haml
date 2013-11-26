@@ -21,9 +21,9 @@
                     -else
                         - @assignments.each do |assignment|
                             %tr
-                                %td= link_to "#{assignment.name}", course_assignment_path(:id => assignment.id, :course_id => params[:id])
+                                %td= link_to "#{assignment.name}", edit_course_assignment_path(:id => assignment.id, :course_id => params[:id])
                                 %td #{assignment.description}
                                 %td{:valign => "middle"}
-                                    = button_to 'Edit', edit_course_assignment_path(:course_id => params[:id]), :method => "get", :class => "btn btn-default"
+                                    = button_to 'Edit', edit_course_assignment_path(:course_id => params[:id],:id => assignment.id ), :method => "get", :class => "btn btn-default"
                                 %td
                                     = button_to 'Delete', course_assignment_path(params[:id],assignment.id), :method => :delete, :confirm => 'Are you sure?', :class => "btn btn-default"
