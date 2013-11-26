@@ -8,6 +8,7 @@
                 %li{:class => "text-left"}= link_to "Delete Class", course_path(@course), :method => :delete, :confirm => 'Are you sure?'
         %div{:class => "col-md-10"}
             %h3 Upcoming Deadlines for #{@course.name}
+            //section for this week, next week, later
             %div#deadlines
     %div{:class => "row"}
         %div{:class => "col-md-offset-2 col-md-10"}
@@ -22,7 +23,7 @@
                             %tr
                                 %td= link_to "#{assignment.name}", course_assignment_path(:id => assignment.id, :course_id => params[:id])
                                 %td #{assignment.description}
+                                %td{:valign => "middle"}
+                                    = button_to 'Edit', edit_course_assignment_path(:course_id => params[:id]), :method => "get", :class => "btn btn-default"
                                 %td
-                                    %button{:type => "submit", :class => "btn btn-default pull-right"} Edit
-                                %td
-                                    %button{:type => "submit", :class => "btn btn-default pull-right"} Delete
+                                    = button_to 'Delete', course_assignment_path(params[:id],assignment.id), :method => :delete, :confirm => 'Are you sure?', :class => "btn btn-default"

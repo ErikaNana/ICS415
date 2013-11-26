@@ -13,8 +13,13 @@ class AssignmentsController < ApplicationController
 
   def new
   end
-
+  def edit
+  end
   def destroy
+    #raise
+    @assignment = Assignment.find_by_id(params[:id])
+    @assignment.destroy
+    redirect_to :back
   end
   def show
     @assignment = Assignment.find_by_id(params[:id])
