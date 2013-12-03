@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-    skip_before_action :set_current_user, only:[:welcome] #avoid redirect loop
+    skip_before_action :set_current_user, only:[:welcome, :about] #avoid redirect loop
 
     def home
         @classes = Course.find(:all, :conditions =>{:user_id => @current_user.id})
@@ -11,6 +11,7 @@ class StaticController < ApplicationController
         @date = Date.today.strftime("%B %d, %Y")
     end
     def about
+        @current_user = OUser.find_by_id(session[:user_id])
         @date = Date.today.strftime("%B %d, %Y")
     end
 end

@@ -13,7 +13,7 @@
                 %li= link_to 'Dashboard', '/home'
                 %li= link_to 'Logout', logout_path
             -else
-                %li= link_to 'Login with your Facebook account', '/auth/facebook'
+                %li= link_to 'Login', root_path
         -if @current_user
             %p{:class => "navbar-text navbar-right"}Welcome, #{@current_user.name}!  Today is #{@date}
         -else
