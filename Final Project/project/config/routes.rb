@@ -10,7 +10,7 @@ Project::Application.routes.draw do
     get 'home' => 'static#home'
     post 'home' => 'static#home'
     get 'about' => 'static#about'
-    post 'validate' => "o_users#validate"
+    post 'validate' => "o_users#validate", :as => "validate"
     get 'signup' => "o_users#signup"
 =begin
     get 'done/:id' => "assignments#done", :as => 'done'
