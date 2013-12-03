@@ -14,11 +14,13 @@
 ActiveRecord::Schema.define(version: 20131124102204) do
 
   create_table "assignments", force: true do |t|
-    t.string "dueDate"
-    t.string "name"
-    t.string "priority"
-    t.string "className"
-    t.string "description"
+    t.string  "dueDate"
+    t.string  "name"
+    t.string  "priority"
+    t.string  "className"
+    t.string  "description"
+    t.string  "status"
+    t.integer "course_id"
   end
 
   create_table "courses", force: true do |t|

@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find_by_id(params[:id])
     @id = params[:id]
-    @assignments = Assignment.find(:all, :conditions =>{:className => @course.name})
+    @assignments = Assignment.find(:all, :conditions =>{:course_id => params[:id]})
     @week = Date.today.at_beginning_of_week.strftime
     @endWeek = Date.today.at_beginning_of_week.advance(:days => 6)
     @nextWeek = Date.today.at_beginning_of_week.advance(:days => 7) #not formatted
