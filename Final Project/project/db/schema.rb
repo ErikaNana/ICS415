@@ -21,10 +21,12 @@ ActiveRecord::Schema.define(version: 20131124102204) do
     t.string  "description"
     t.string  "status"
     t.integer "course_id"
+    t.string  "user_id"
   end
 
   create_table "courses", force: true do |t|
     t.string "name"
+    t.string "user_id"
   end
 
   create_table "users", force: true do |t|

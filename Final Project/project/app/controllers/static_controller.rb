@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-    skip_before_action :set_current_user, except:[:home, :about] #should be logged in at this point
+    skip_before_action :set_current_user, except:[:home] #should be logged in at this point
 
     def home
         @classes = Course.all

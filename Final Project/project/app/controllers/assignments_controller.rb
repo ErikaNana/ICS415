@@ -4,6 +4,7 @@ class AssignmentsController < ApplicationController
     params[:assignment][:className] = @course.name #for querying an assignment for a particular class
     params[:assignment][:course_id] = @course.id
     params[:assignment][:status] = "toDo"
+    params[:assignment][:user_id] = @user.uid
     if params[:assignment].values.include?("") #check if there are empty fields
       flash[:warning] = "Please fill in all fields"
       redirect_to :back

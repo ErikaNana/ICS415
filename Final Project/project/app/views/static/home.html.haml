@@ -9,6 +9,17 @@
         %div{:class => "col-md-10"}
             /default is by date, can sort by priority or class name
             %h3#classes Week of #{@week}
+            %table{:class => "table table-striped"}
+                %tbody
+                    - @classes.each do |course|
+                        - assignments = Assignment.find(:all, :conditions =>{:course_id => course.id})
+                        - if !assignments.blank?
+                            -assignments.each do |assignment|
+                                -if Date.parse(assignment.dueDate) <= @endWeek
+                                    %tr
+                                        %td.name.set.format #{course.name}
+                                        %td.format #{assignment.name}
+                                        %td.format Due on #{Date.parse(assignment.dueDate).strftime("%B %d, %Y")}
     %div{:class => "row"}
         %div{:class => "col-md-10 pull-right"}
             %h3 Classes
