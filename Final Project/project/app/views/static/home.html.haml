@@ -11,23 +11,24 @@
             %h3#classes Week of #{@week}
             %table{:class => "table table-striped"}
                 %tbody
+                    -counter = 0
                     -if @classes.blank?
                         %tr
                             %td You got nothing so far...Lucky you.
-                    -counter = 0
-                    - @classes.each do |course|
-                        - assignments = Assignment.find(:all, :conditions =>{:course_id => course.id, :user_id => @current_user.id})
-                        - if !assignments.blank?
-                            -assignments.each do |assignment|
-                                -if Date.parse(assignment.dueDate) <= @endWeek
-                                    %tr
-                                        %td.name.set.format #{course.name}
-                                        %td.format #{assignment.name}
-                                        %td.format Due on #{Date.parse(assignment.dueDate).strftime("%B %d, %Y")}
-                                        -counter = counter + 1
-                    -if counter == 0
-                        %tr
-                            %td You got nothing so far...Lucky you.
+                    -else
+                        - @classes.each do |course|
+                            - assignments = Assignment.find(:all, :conditions =>{:course_id => course.id, :user_id => @current_user.id})
+                            - if !assignments.blank?
+                                -assignments.each do |assignment|
+                                    -if Date.parse(assignment.dueDate) <= @endWeek
+                                        %tr
+                                            %td.name.set.format #{course.name}
+                                            %td.format #{assignment.name}
+                                            %td.format Due on #{Date.parse(assignment.dueDate).strftime("%B %d, %Y")}
+                                            -counter = counter + 1
+                        -if counter == 0
+                            %tr
+                                %td You got nothing so far...Lucky you.
 
     %div{:class => "row"}
         %div{:class => "col-md-10 pull-right"}
