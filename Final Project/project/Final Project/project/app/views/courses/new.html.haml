@@ -1,0 +1,9 @@
+%h1 Add A Class
+%form{:role => "form-center", :action => courses_path, :method => "post", :class => "form-horizontal"}
+    %div{:class => "form-group"}
+        %label{:for => "inputClassName", :class => "col-sm-2 control-label"}Class Name
+        %div{:class => "col-sm-4"}
+            %input{:type => "text", :class => "form-control", :id => "inputClassName", :name =>"class[name]"}
+    %div{:class =>"form-group"}
+        %div{:class => "col-sm-offset-2 col-sm-10"}
+            %button{:type => "submit", :class => "btn btn-default"}Save

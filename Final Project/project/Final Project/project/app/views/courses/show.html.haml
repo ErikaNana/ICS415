@@ -1,0 +1,67 @@
+%div{:class => "container-fluid"}
+    %div{:class => "row"}
+        %div{:class => "col-md-2"}
+            %h3 Navigation
+            %ol{:class => "nav nav-pills nav-stacked"}
+                %li{:class => "text-left"}= link_to "Add Assignment", new_course_assignment_path(@id)
+                %li{:class => "text-left"}=link_to "Edit Class", edit_course_path(@id)
+                %li{:class => "text-left"}= link_to "Delete Class", course_path(params[:id]), :method => :delete, :confirm => 'Are you sure?'
+                / %li{:class => "text-left"}=link_to "Late Assignments", late_path(params[:id]), :method => "get"
+                / %li{:class => "text-left"}=link_to "Past Assignments", past_path(params[:id]), :method => "get"
+        %div{:class => "col-md-10"}
+            %h3 Upcoming Deadlines for #{@course.name}
+            //section for this week, next week, later
+            %div
+                %div.padding
+                %h4.blue This Week
+                //for all of the assignments check if their date is < or end of week, if it is, put it
+                %table{:class => "table table-striped"}
+                    %tbody
+                        -if @assignments.blank?
+                            %tr
+                                %td.format Nothing yet! Go read or something.
+                        -else
+                            -@assignments.each do |assignment|
+                                -if Date.parse(assignment.dueDate) <= @endWeek
+                                    %tr
+                                        %td.name.set.format #{assignment.name}
+                                        %td.format Due on #{Date.parse(assignment.dueDate).strftime("%B %d, %Y")}
+            %div
+                %div.padding
+                %h4.blue Next Week
+                %table{:class => "table table-striped"}
+                    %tbody
+                        -if @assignments.blank?
+                            %tr
+                                %td.format Nothing yet! Go read or something.
+                        -else
+                            -counter = 0
+                            -@assignments.each do |assignment|
+                                -aDueDate = Date.parse(assignment.dueDate)
+                                -if aDueDate >= @nextWeek and aDueDate <= @endNextWeek
+                                    %tr
+                                        %td.format.name.set #{assignment.name}
+                                        %td.format Due on #{Date.parse(assignment.dueDate).strftime("%B %d, %Y")}
+                                    -counter = counter + 1
+                            -if counter == 0
+                                %td.format Nothing yet! Go read or something.
+                //if date is after endWeek and before endNextWeek
+    %div{:class => "row"}
+        %div{:class => "col-md-offset-2 col-md-10"}
+            %h3 All Assignments
+            %table{:class => "table table-striped"}
+                %tbody
+                    -if @assignments.blank?
+                        %tr
+                            %td No assignments added yet
+                    -else
+                        - @assignments.each do |assignment|
+                            %tr
+                                %td.format.name.set #{assignment.name}
+                                %td.format #{assignment.description}
+                                / %td.format.button
+                                /     = button_to "Done", done_path(:id =>assignment.id, :course_id => params[:id]), :method => "get", :class => "btn btn-default "
+                                %td.format.button{:valign => "middle"}
+                                    = button_to 'Edit', edit_course_assignment_path(:course_id => params[:id],:id => assignment.id ), :method => "get", :class => "btn btn-default"
+                                %td.format.button
+                                    = button_to 'Delete', course_assignment_path(params[:id],assignment.id), :method => :delete, :confirm => 'Are you sure?', :class => "btn btn-default"

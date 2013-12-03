@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>And here's a form!</title>
+	<link rel = "stylesheet" href = "style.css">
+</head>
+<body >
+	<div id="header">
+		<h1>What's up Doc?</h1>
+	</div>
+	<div id = "navbar">
+		<a href = "home.html">Home</a> | 
+		<a href = "forms.html">Forms</a>
+	</div>
+	<table class = "outer">
+		<tr>
+			<td id = "sidebar"><h3>Forms Summary</h3>
+				<p>HTML forms support several different types of input.</p>
+			</td>
+			<td id = "content"><h2>Forms Page</h2>
+					<form action = "forms.html">
+						Pick a color: <input type = "color" name = "pickedColor"><br>
+						When's your birthday? <input type = "date" name = "bday"><br>
+						Can you be more specific? (Date and time) <input type = "datetime" name = "bdaytime"><br>
+						Email: <input type = "email" name = "email"><br>
+						Pick a month: <input type = "month" name = "pickedMonth"><br>
+						What's your favorite number (1-100)? <input type = "number" name = "quantity" min = "1" max = "100"><br>
+						Pick again: <input type = "range" name = "points" min = "1" max = "10"><br>
+						Let Google find something for you: <input type = "search" name = "googleSearch"><br>
+						Give me a website: <input type = "url" name = "website"><br>
+						<input type = "submit" value = "Submit">
+						<br><br><br><br><br><br><br><br><br><br><br>
+					</form>
+			</td>
+		</tr>
+		<tr>
+			<td id = "footer" colspan = "2"> Copyright (C) Erika Nana </td>
+		</tr>
+	</table>
+</body>
+</html>

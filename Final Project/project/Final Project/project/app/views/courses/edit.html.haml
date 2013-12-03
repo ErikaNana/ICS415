@@ -1,0 +1,9 @@
+%h1 Edit Class
+= form_tag(course_path(:id => params[:id]), method: "put", :class => "form-horizontal", :id => "aForm") do
+    %div{:class => "form-group"}
+        %label{:for => "inputClassName", :class => "col-sm-2 control-label"}Class Name
+        %div{:class => "col-sm-4"}
+            %input{:type => "text", :class => "form-control", :id => "inputClassName", :name =>"class[name]", :value => "#{@course.name}"}
+    %div{:class =>"form-group"}
+        %div{:class => "col-sm-offset-2 col-sm-10"}
+            %button{:type => "submit", :class => "btn btn-default"}Save
