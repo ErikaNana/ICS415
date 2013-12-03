@@ -1,7 +1,7 @@
 $headings-font-family: Helvetica, Arial;
 $font-family-sans-serif: Helvetica, Arial;
 $font-family-base: sans-serif;
-
+$font-size: 16px;
 /* $table-bg-accent:
 $table-border-color: */
 @import "bootstrap";
@@ -94,7 +94,20 @@ div #inputDescription > textarea{
 #options{
   color:blue;
 }
-table td{
-  display: table-cell;
-  vertical-align: top;
+/* bootstrap has a .table td class so need to override */
+.table tbody>tr>td.format {
+  vertical-align: middle;
+  font-size: 14px;
+}
+.padding{
+  height: 1px;
+}
+.set{
+  width: 15%;
+}
+.button{
+  width: 10%;
+}
+.blue{
+  color: #0EBFE9;
 }

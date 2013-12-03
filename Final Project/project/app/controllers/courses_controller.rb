@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
     @course = Course.find_by_id(params[:id])
     @id = params[:id]
     @assignments = Assignment.find(:all, :conditions =>{:className => @course.name})
+    @week = Date.today.at_beginning_of_week.strftime
+    @endWeek = Date.today.at_beginning_of_week.advance(:days => 6)
+    @nextWeek = Date.today.at_beginning_of_week.advance(:days => 7) #not formatted
+    @endNextWeek = @nextWeek.advance(:days => 6)
   end
 
   def new
@@ -15,6 +19,7 @@ class CoursesController < ApplicationController
   end
 
   def edit
+    @course = Course.find_by_id(params[:id])
   end
 
   def create
@@ -23,6 +28,9 @@ class CoursesController < ApplicationController
   end
 
   def update
+    @course = Course.find_by_id(params[:id])
+    @course.update_attributes!(params[:class])
+    redirect_to course_path(params[:id])
   end
 
   def destroy

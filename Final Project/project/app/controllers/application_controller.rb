@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   def set_current_user #checks to see if logged in THIS DOESN'T WORK SO FAR
     @current_user = User.find_by_id(session[:user_id])
+    @date = Date.today.strftime("%B %d, %Y")
     if @current_user == nil
         redirect_to root_path
     end

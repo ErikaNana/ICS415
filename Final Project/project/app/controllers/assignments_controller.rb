@@ -7,7 +7,6 @@ class AssignmentsController < ApplicationController
       redirect_to :back
     else
       @assignment = Assignment.create!(params[:assignment])
-      raise @assignment.inspect
       redirect_to course_path(params[:course_id])
     end
   end
@@ -25,10 +24,16 @@ class AssignmentsController < ApplicationController
   end
   def show
     @assignment = Assignment.find_by_id(params[:id])
+    @week = Date.today.at_beginning_of_week.strftime("%B %d, %Y")
+    @endWeek = Date.today.at_beginning_of_week.advance(:days => 6)
   end
   def update
     @assignment = Assignment.find(params[:id])
     @assignment.update_attributes!(params[:assignment])
     redirect_to course_path(:id => params[:course_id])
+  end
+
+  def done
+    raise
   end
 end

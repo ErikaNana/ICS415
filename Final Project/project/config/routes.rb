@@ -9,4 +9,7 @@ Project::Application.routes.draw do
     get 'home' => 'static#home'
     post 'home' => 'static#home'
     get 'about' => 'static#about'
+    get 'done:course_id' => "assignments#done", :as => 'done'
+    get 'late/:course_id' => "assignments#late", :as=> 'late'
+    get '/past/:course_id,', to: 'assignments#past', as:'past'
 end
