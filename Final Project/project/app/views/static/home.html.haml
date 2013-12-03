@@ -11,6 +11,10 @@
             %h3#classes Week of #{@week}
             %table{:class => "table table-striped"}
                 %tbody
+                    -if @classes.blank?
+                        %tr
+                            %td You got nothing so far...Lucky you.
+                    -counter = 0
                     - @classes.each do |course|
                         - assignments = Assignment.find(:all, :conditions =>{:course_id => course.id, :user_id => @current_user.id})
                         - if !assignments.blank?
@@ -20,6 +24,11 @@
                                         %td.name.set.format #{course.name}
                                         %td.format #{assignment.name}
                                         %td.format Due on #{Date.parse(assignment.dueDate).strftime("%B %d, %Y")}
+                                        -counter = counter + 1
+                    -if counter == 0
+                        %tr
+                            %td You got nothing so far...Lucky you.
+
     %div{:class => "row"}
         %div{:class => "col-md-10 pull-right"}
             %h3 Classes
