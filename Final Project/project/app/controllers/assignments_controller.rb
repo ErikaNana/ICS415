@@ -28,5 +28,7 @@ class AssignmentsController < ApplicationController
   end
   def update
     @assignment = Assignment.find(params[:id])
+    @assignment.update_attributes!(params[:assignment])
+    redirect_to course_path(:id => params[:course_id])
   end
 end
