@@ -36,6 +36,8 @@ class AssignmentsController < ApplicationController
   end
 
   def done
-    raise
+     @assignment = Assignment.find_by_id(params[:id])
+    @assignment.update_attributes!(:status => "done")
+    redirect_to :back
   end
 end

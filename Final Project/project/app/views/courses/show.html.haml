@@ -60,7 +60,7 @@
                                 %td.format.name.set #{assignment.name}
                                 %td.format #{assignment.description}
                                 %td.format.button
-                                    = button_to "Done", done_path(params[:id]), :method => "get", :class => "btn btn-default "
+                                    = button_to "Done", done_path(:id =>assignment.id, :course_id => params[:id]), :method => "get", :class => "btn btn-default "
                                 %td.format.button{:valign => "middle"}
                                     = button_to 'Edit', edit_course_assignment_path(:course_id => params[:id],:id => assignment.id ), :method => "get", :class => "btn btn-default"
                                 %td.format.button
