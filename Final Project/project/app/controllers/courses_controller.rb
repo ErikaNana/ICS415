@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find_by_id(params[:id])
     @id = params[:id]
-    @assignments = Assignment.find(:all, :conditions =>{:course_id => params[:id], :user_id => @user.uid})
+    @assignments = Assignment.find(:all, :conditions =>{:course_id => params[:id], :user_id => @current_user.id})
     @week = Date.today.at_beginning_of_week.strftime
     @endWeek = Date.today.at_beginning_of_week.advance(:days => 6)
     @nextWeek = Date.today.at_beginning_of_week.advance(:days => 7) #not formatted
@@ -23,11 +23,8 @@ class CoursesController < ApplicationController
   end
 
   def create
-    @current_user = User.find_by_id(session[:user_id])
-    @user = User.find_by_id(@current_user.uid)
-    params[:class][:user_id] = @user.uid
+    params[:class][:user_id] = @current_user.id
     @course = Course.create!(params[:class])
-     raise @course.inspect
     redirect_to home_path
   end
 

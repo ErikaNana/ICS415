@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'haml'
 
 gem 'bootstrap-sass'
-
+gem 'bcrypt-ruby', '3.1.2'
 # use Ruby debugger
 group :development, :test do
     gem 'debugger'

@@ -1,4 +1,5 @@
 Project::Application.routes.draw do
+  get "o_users/new"
     resources :courses do
         resources :assignments
     end
@@ -9,10 +10,12 @@ Project::Application.routes.draw do
     get 'home' => 'static#home'
     post 'home' => 'static#home'
     get 'about' => 'static#about'
+    post 'validate' => "o_users#validate"
+    get 'signup' => "o_users#signup"
 =begin
     get 'done/:id' => "assignments#done", :as => 'done'
     get 'late/:id' => "assignments#late", :as=> 'late'
     get 'past/:id,', to: 'assignments#past', as:'past'
 =end
-
+    resources :o_users
 end

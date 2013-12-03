@@ -6,6 +6,7 @@ class Assignment < ActiveRecord::Base
     attr_accessible :className
     attr_accessible :status
     attr_accessible :course_id
-    atrr_accessible :user_id
+    attr_accessible :user_id
+
     belongs_to :course
 end

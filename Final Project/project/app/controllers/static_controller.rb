@@ -1,8 +1,8 @@
 class StaticController < ApplicationController
-    skip_before_action :set_current_user, except:[:home] #should be logged in at this point
+    skip_before_action :set_current_user, only:[:welcome] #avoid redirect loop
 
     def home
-        @classes = Course.all
+        @classes = Course.find(:all, :conditions =>{:user_id => @current_user.id})
         @week = Date.today.at_beginning_of_week.strftime("%B %d, %Y")
         @endWeek = Date.today.at_beginning_of_week.advance(:days => 6)
         @date = Date.today.strftime("%B %d, %Y")
